@@ -91,6 +91,7 @@ picture {
 
 header {
   height: 170px;
+
   background-color: #fff;
 }
 .logo-container {
@@ -154,26 +155,40 @@ nav {
   }
   &.nav__header {
     height: 58px;
-margin-bottom: 58px;
+    margin-bottom: 50px;
+
     text-align: center;
 
     @include linear-gradient(#969696, #717171);
     ul {
       display: block;
 
-
-
+      padding-top: 7px;
 
       text-align: center;
+
+      @extend .justify-child;
       li {
         font-size: 24px;
 
         display: inline-block;
 
         text-transform: uppercase;
+
+        border-radius: 10px;
         a {
+          display: block;
+
+          padding: 0 20px;
+
           color: #fff;
           border-color: red;
+        }
+        &:hover {
+          background-color: $gray-dark;
+          a {
+            text-decoration: none;
+          }
         }
       }
     }
@@ -182,6 +197,30 @@ margin-bottom: 58px;
 
 section {
   padding: 0 0 $footer;
+  .page-title {
+    font-size: 60px;
+    line-height: 45px;
+
+    position: relative;
+
+    margin-bottom: 40px;
+    padding-bottom: 25px;
+
+    text-align: center;
+    &:after {
+      position: absolute;
+      right: 24%;
+      bottom: 0;
+      left: 24%;
+
+      width: 48%;
+      height: 1px;
+
+      background-color: $gray-dark;
+
+      @extend .dblock;
+    }
+  }
 }
 article {
   @extend .clearfix;
@@ -194,15 +233,59 @@ article {
 footer {
   height: $footer;
   margin: $footer_margin auto 0;
+  padding-top: 70px;
 
-  background-color: $gray-light;
-  .inner {
-    height: $footer;
+  @include linear-gradient(#fff, #737373);
+  .nav-footer {
+    font-size: 16px;
+    line-height: 30px;
+    ul {
+      @extend .justify-child;
+    }
+    li {
+      a {
+        color: #000;
+      }
+      &:hover {
+        a {
+          text-decoration: none;
+
+          color: darken($violet, 20%);
+        }
+      }
+    }
+  }
+  .footer-socail {
+    ul {
+      li {
+        display: inline-block;
+
+        margin: 0 5px 0 0;
+        a {
+          color: #000;
+        }
+        &:hover {
+          a {
+            color: $violet;
+          }
+        }
+      }
+    }
+  }
+  .nav-footer, .footer-socail {
+    height: 25px;
+    margin-bottom: 45px;
+  }
+  .copyright {
+    font-size: 14px;
+    color: #000;
+    text-align: center;
+    line-height: 1;
   }
 }
 
-@import url(https://fonts.googleapis.com/css?family=Raleway:400,200,300,400italic,300italic,200italic,700italic,700);
+
 @import 'fonts/font_fontawesome';
-@import 'fonts/font_roboto';
+@import 'fonts/font_raleway';
 @import 'base64';
 @import 'import/print';
