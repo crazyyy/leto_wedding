@@ -1,5 +1,5 @@
 // Font Sizes
-$base-font-size: 16px;
+$base-font-size: 24px;
 $em-base: $base-font-size;
 $base-font-family: 'Raleway', sans-serif;
 $heading-font-family: $base-font-family;
@@ -16,11 +16,11 @@ $fthin: 200; // 200 Light or Thin
 $fulight: 100; // 100 Extra Light or Ultra Light
 
 // Line height
-$base-line-height: 1.1;
+$base-line-height: 1.8;
 $heading-line-height: 1.2;
 
 // Other Sizes
-$width: 980px;
+$width: 960px;
 $footer: 50px;
 $footer_margin: $footer - 2 * $footer;
 $base-border-radius: 3px;
@@ -29,6 +29,7 @@ $small-spacing: $base-spacing / 2;
 $base-z-index: 0;
 
 // Colors
+$violet: #be98d5;
 $orange: orange;
 $red: red;
 $blue: #477dca;

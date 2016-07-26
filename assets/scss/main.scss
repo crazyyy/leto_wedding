@@ -90,14 +90,60 @@ picture {
 }
 
 header {
-  background-color: $gray-light;
+  height: 170px;
+  background-color: #fff;
+}
+.logo-container {
+  padding-top: 35px;
   .logo {
     display: block;
+
+    width: 585px;
+    height: 111px;
+    margin-left: 20px;
     img {
       max-width: 100%;
     }
   }
 }
+.header-social-container {
+  padding-top: 60px;
+  .header-social {
+    @extend .clearfix;
+    li {
+      display: inline-block;
+      float: left;
+
+      width: 50px;
+      height: 50px;
+      margin: 0 10px 0 0;
+
+      border-radius: 50px;
+      a {
+        font-size: 30px;
+        line-height: 1.6;
+
+        display: block;
+
+        width: 50px;
+        height: 50px;
+
+        text-align: center;
+
+        color: $violet;
+        border: 1px solid $violet;
+        border-radius: 50%;
+      }
+      &:hover {
+        a {
+          color: darken($violet, 10%);
+          border-color: darken($violet, 10%);
+        }
+      }
+    }
+  }
+}
+
 nav {
   ul {
     @extend .justify-child;
@@ -106,8 +152,31 @@ nav {
       display: inline-block;
     }
   }
-  .headnav {
-    font-size: 100%;
+  &.nav__header {
+    height: 58px;
+margin-bottom: 58px;
+    text-align: center;
+
+    @include linear-gradient(#969696, #717171);
+    ul {
+      display: block;
+
+
+
+
+      text-align: center;
+      li {
+        font-size: 24px;
+
+        display: inline-block;
+
+        text-transform: uppercase;
+        a {
+          color: #fff;
+          border-color: red;
+        }
+      }
+    }
   }
 }
 
