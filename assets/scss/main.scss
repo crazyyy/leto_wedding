@@ -26,6 +26,26 @@ body {
   background-color: $base-background-color;
 
   -webkit-font-smoothing: antialiased;
+  &.page-template-front-page {
+    .nav__header {
+      position: relative;
+      &:after {
+        position: absolute;
+        top: 58px;
+        right: 0;
+        left: 0;
+
+        height: 300px;
+
+        background-image: url(../img/home-image.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+
+        @extend .dblock;
+      }
+    }
+  }
 }
 h1,
 h2,
@@ -82,6 +102,24 @@ picture {
   margin: 0 auto;
 
   @extend .clearfix;
+}
+.btn {
+  font-size: 16px;
+
+  text-align: center;
+  text-decoration: none;
+
+  color: #fff;
+  box-shadow: 0 3px 1.98px .02px rgba(168, 103, 208, .004);
+  &.btn-violet {
+    background-color: $violet;
+  }
+  &:hover {
+    text-decoration: none;
+    &.btn-violet {
+      background-color: darken($violet, 15%);
+    }
+  }
 }
 .container {
   position: relative;
@@ -190,6 +228,10 @@ nav {
             text-decoration: none;
           }
         }
+        &.current-menu-item,
+        &.current-post-ancestor {
+          background-color: $gray-dark;
+        }
       }
     }
   }
@@ -235,6 +277,42 @@ article {
 
       color: #000;
     }
+  }
+  form {
+    width: 100%;
+    max-width: 365px;
+    margin: 0 auto 50px;
+
+    text-align: center;
+    input {
+      font-size: 15px !important;
+
+      width: 100%;
+      margin-bottom: 10px;
+      padding-right: 50px !important;
+      padding-left: 50px !important;
+
+      border: 1px solid #000 !important;
+      &.btn {
+        font-size: 16px;
+
+        width: 140px;
+        margin: 0 auto;
+      }
+    }
+    textarea {
+      font-size: 15px;
+
+      height: 150px;
+      margin-bottom: 30px;
+      padding-right: 50px !important;
+      padding-left: 50px !important;
+
+      border: 1px solid #000;
+    }
+  }
+  .circle-carousel {
+    margin-bottom: 6px;
   }
   .post-navi {
     display: block;
@@ -291,11 +369,256 @@ article {
       }
     }
   }
+  &.article-about {
+    padding-top: 345px;
+
+    text-align: center;
+    h3 {
+      font-size: 30px;
+    }
+    h4 {
+      font-size: 36px;
+
+      text-transform: uppercase;
+    }
+    p {
+      font-size: 24px;
+
+      margin-bottom: 30px;
+    }
+  }
+  .contact-body {
+    font-size: 30px;
+
+    position: relative;
+
+    display: block;
+
+    margin: 0 0 20px;
+
+    text-align: center;
+
+    color: #000;
+    &:before {
+      position: relative;
+      top: 3px;
+
+      margin-right: 10px;
+
+      @extend .fa;
+      @extend .dblock;
+    }
+    &:hover {
+      text-decoration: none;
+    }
+    &.contact-phone {
+      &:before {
+        content: '\f095';
+      }
+    }
+    &.contact-vk {
+      margin-bottom: 60px;
+      padding-bottom: 50px;
+      &:after {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+
+        width: 240px;
+        height: 1px;
+        margin-left: -120px;
+
+        background-color: #000;
+
+        @extend .dblock;
+      }
+      &:before {
+        top: -1px;
+
+        content: '\f189';
+      }
+    }
+  }
 }
 .looper {
-  @extend .clearfix;
-}
+  margin-bottom: 110px;
 
+  @extend .clearfix;
+  .shor-loop {
+    text-align: center;
+    h2 {
+      font-size: 30px;
+
+      margin-bottom: 30px;
+      a {
+        text-decoration: none;
+
+        color: #000;
+      }
+    }
+    p {
+      margin-bottom: 20px;
+    }
+    .btn {
+      width: 150px;
+      margin: 0 auto 20px;
+    }
+  }
+  .feature-img {
+    position: relative;
+    img {
+      width: 100%;
+    }
+    &:before {
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      right: 0;
+      bottom: 0;
+
+      width: 70px;
+
+      @include linear-gradient(to right, transparent, #fff);
+      @extend .dblock;
+    }
+    &.feature-img--right {
+      &:before {
+        right: auto;
+        left: 0;
+
+        @include linear-gradient(to right, #fff, transparent);
+      }
+    }
+  }
+}
+.pagination {
+  padding: 30px 0;
+
+  text-align: center;
+
+  @extend .clearfix;
+  span,
+  a {
+    display: inline-block;
+
+    height: 30px;
+  }
+  a {
+    text-decoration: none;
+
+    color: $violet;
+    &:hover {
+      color: darken($violet, 14%);
+    }
+  }
+  .current {
+    font-weight: bold;
+  }
+  .next {
+    float: right;
+  }
+  .prev {
+    float: left;
+  }
+}
+.circle-carousel {
+  position: relative;
+
+  display: block;
+
+  height: 800px;
+  margin: 0;
+  padding: 0;
+  ul {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  .item {
+    position: absolute;
+    img {
+      overflow: hidden;
+
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .item-1,
+  .item-2 {
+    width: 440px;
+    height: 550px;
+  }
+  .item-3,
+  .item-4,
+  .item-5 {
+    z-index: 2;
+    top: 530px;
+
+    width: 200px;
+    height: 250px;
+
+    border: 5px solid #fff;
+  }
+  .item-1 {
+    top: 10px;
+    left: 10px;
+  }
+  .item-2 {
+    top: 10px;
+    left: 480px;
+  }
+  .item-3 {
+    left: 55px;
+  }
+  .item-4 {
+    left: 365px;
+  }
+  .item-5 {
+    left: 675px;
+  }
+  .circle-controls {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    right: 0;
+    left: 0;
+
+    height: 50px;
+    margin-top: -25px;
+    span {
+      font-size: 30px;
+      font-weight: bold;
+      line-height: 1.5;
+
+      position: absolute;
+      top: 0;
+
+      display: block;
+
+      width: 50px;
+      height: 50px;
+
+      cursor: pointer;
+      text-align: center;
+
+      color: #7c7c7c;
+      border-radius: 50%;
+
+      &.prev {
+        left: -50px;
+      }
+      &.next {
+        right: -50px;
+      }
+      &:hover {
+        color: #000;
+      }
+    }
+  }
+}
 
 footer {
   height: $footer;
