@@ -21,22 +21,43 @@ if (typeof jQuery === 'undefined') {
   console.log('jQuery has loaded');
 }
 // Place any jQuery/helper plugins in here.
-var item1 = {top:"10px",left:"10px",width:"440px",height:"550px"};
-var item2 = {top:"10px",left:"480px",width:"440px",height:"550px"};
-var item3 = {top:"530px",left:"55px",width:"200px",height:"250px"};
-var item4 = {top:"530px",left:"365px",width:"200px",height:"250px"};
-var item5 = {top:"530px",left:"675px",width:"200px",height:"250px"};
+var item1 = {
+  top: "10px",
+  left: "10px",
+  width: "440px",
+  height: "550px"
+};
+var item2 = {
+  top: "10px",
+  left: "480px",
+  width: "440px",
+  height: "550px"
+};
+var item3 = {
+  top: "530px",
+  left: "55px",
+  width: "200px",
+  height: "250px"
+};
+var item4 = {
+  top: "530px",
+  left: "365px",
+  width: "200px",
+  height: "250px"
+};
+var item5 = {
+  top: "530px",
+  left: "675px",
+  width: "200px",
+  height: "250px"
+};
 
 $('.circle-controls .next').on('click', function() {
 
   $('.item-1').animate(item2, 500);
-
   $('.item-2').animate(item5, 500);
-
   $('.item-3').animate(item1, 500);
-
   $('.item-4').animate(item3, 500);
-
   $('.item-5').animate(item4, 500);
 
   $('.item-1').addClass('item-temp-2');
@@ -65,13 +86,9 @@ $('.circle-controls .next').on('click', function() {
 $('.circle-controls .prev').on('click', function() {
 
   $('.item-1').animate(item3, 500);
-
   $('.item-2').animate(item1, 500);
-
   $('.item-3').animate(item4, 500);
-
   $('.item-4').animate(item5, 500);
-
   $('.item-5').animate(item2, 500);
 
   $('.item-1').addClass('item-temp-3');
@@ -96,3 +113,14 @@ $('.circle-controls .prev').on('click', function() {
   $('.item-temp-5').removeClass('item-temp-5');
 
 })
+$(document).ready(function() {
+  if (localStorage.getItem('popState') != 'shown') {
+    $(".modal-welcome").delay(2000).fadeIn();
+    localStorage.setItem('popState', 'shown')
+  }
+
+  $('.modal-welcome .btn, .modal-welcome .choose-img').click(function(e) // You are clicking the close button
+    {
+      $('.modal-welcome').fadeOut(); // Now the pop up is hiden.
+    });
+});

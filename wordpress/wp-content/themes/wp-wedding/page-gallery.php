@@ -2,11 +2,16 @@
   <?php if (have_posts()): while (have_posts()) : the_post(); ?>
     <h1 class="page-title col-md-12"><?php the_title(); ?></h1>
     <article id="post-<?php the_ID(); ?>" <?php post_class('col-md-12'); ?>>
-      <?php the_content(); ?>
+      <div class="article-inside">
+        <?php the_content(); ?>
+      </div><!-- /.article-inside -->
 
       <?php get_template_part('circle-carousel'); ?>
 
-      <?php get_template_part('contacts-include'); ?>
+      <div class="article-contacts">
+        <h6><span>Свяжитесь с нами</span></h6>
+        <?php get_template_part('contacts-include'); ?>
+      </div><!-- /.article-contacts -->
 
     </article>
   <?php endwhile; else: ?>

@@ -1,6 +1,6 @@
 <?php /* Template Name: Price Page */ get_header(); ?>
   <?php if (have_posts()): while (have_posts()) : the_post(); ?>
-    <article id="post-<?php the_ID(); ?>" <?php post_class('col-md-12 article-about'); ?>>
+    <article id="post-<?php the_ID(); ?>" <?php post_class('col-md-12'); ?>>
       <?php the_content(); ?>
     </article>
   <?php endwhile; else: ?>
