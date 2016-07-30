@@ -266,6 +266,16 @@ section {
 }
 article {
   @extend .clearfix;
+  ul {
+    padding-left: 40px;
+
+    list-style-type: disc;
+    li {
+      &:before {
+        display: none;
+      }
+    }
+  }
   span {
     &.date {
       font-size: 24px;
@@ -481,6 +491,32 @@ article {
       }
     }
   }
+  .table-price {
+    width: 100%;
+    td {
+      vertical-align: top;
+
+      border: 0;
+      &:first-child {
+        font-size: 24px;
+
+        padding-right: 30px;
+        h5 {
+          font-size: 28px;
+          font-weight: bold;
+        }
+      }
+      &:last-child {
+        width: 30%;
+
+        text-align: center;
+        span {
+          font-size: 50px;
+          font-weight: 200;
+        }
+      }
+    }
+  }
 }
 .looper {
   margin-bottom: 110px;
@@ -667,12 +703,27 @@ article {
   right: 0;
   bottom: 0;
   left: 0;
+
+  background-image: url(../img/bg-modal-welcome.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  .fa-times-circle {
+    font-size: 50px;
+
+    position: absolute;
+    top: 50px;
+    right: 50px;
+
+    cursor: pointer;
+
+    color: rgba(0, 0, 0, .5);
+    &:hover {
+      color: #000;
+    }
+  }
   &.modal-welcome {
     display: none;
-    background-image: url(../img/bg-modal-welcome.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
     .row {
       padding-top: 140px;
 
@@ -727,6 +778,77 @@ article {
         }
       }
     }
+  }
+  &.modal-order {
+    display: none;
+
+    padding-top: 150px;
+    form {
+      width: 460px;
+      margin: 0 auto;
+      input,
+      select {
+        height: 40px;
+        margin-bottom: 10px;
+        &[type=submit] {
+          display: block;
+
+          width: 60%;
+          height: auto;
+          margin: 0 auto;
+        }
+      }
+      select {
+        width: 100%;
+        option {
+          width: 100%;
+        }
+      }
+      textarea {
+        height: 150px;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+.price-second {
+  margin-bottom: 30px;
+  .price-second-img {
+    display: block;
+    overflow: hidden;
+
+    height: 315px;
+    margin-bottom: 20px;
+
+    border: 5px solid gray;
+    img {
+      width: 100%;
+      min-height: 100%;
+    }
+  }
+  h5 {
+    font-size: 26px;
+    font-weight: bold;
+
+    margin-bottom: 15px;
+
+    color: #000;
+  }
+  p {
+    font-size: 22px;
+    line-height: 1.2;
+
+    margin-bottom: 10px;
+
+    color: #000;
+  }
+  .price-container {
+    font-size: 50px;
+    font-weight: 200;
+color: #000;
+    display: block;
+
+    margin-bottom: 20px;
   }
 }
 footer {

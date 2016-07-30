@@ -119,8 +119,31 @@ $(document).ready(function() {
     localStorage.setItem('popState', 'shown')
   }
 
-  $('.modal-welcome .btn, .modal-welcome .choose-img').click(function(e) // You are clicking the close button
-    {
-      $('.modal-welcome').fadeOut(); // Now the pop up is hiden.
+  $('.modal-welcome .btn, .modal-welcome .choose-img, .modal .fa-times-circle').click(function(e) {
+    $('.modal').fadeOut();
+  });
+
+  $('.table-price button').on('click', function() {
+    $(this).parent('td').parent('tr').addClass('current-row');
+    var selector;
+    $('.table-price tr').each(function(index, el) {
+      var currentTitle = $(this).children('td').children('h5').html();
+      if ($(this).hasClass('current-row')) {
+        selector = selector + '<option selected value="' + currentTitle + '">' + currentTitle + '</option>';
+      } else {
+        selector = selector + '<option value="' + currentTitle + '">' + currentTitle + '</option>';
+      }
+
     });
+    $('.order-select').html(selector);
+    $('.current-row').removeClass('current-row');
+    $('.modal-order').fadeIn('fast');
+  })
+
 });
+var maxheight = 0;
+$(".price-second").each(function() {
+  if($(this).height() > maxheight) { maxheight = $(this).height(); }
+});
+
+$(".price-second").height(maxheight);
