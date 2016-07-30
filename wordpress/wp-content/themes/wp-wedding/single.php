@@ -11,8 +11,8 @@
       <?php edit_post_link(); ?>
 
       <ul class="post-navi">
-        <li><?php previous_post_link('%link', 'Предыдущий пост'); ?></li>
-        <li><?php next_post_link('%link', 'Cледующий  пост'); ?></li>
+        <li><?php previous_post_link('%link', '<  Предыдущий пост'); ?></li>
+        <li><?php next_post_link('%link', 'Cледующий  пост  >'); ?></li>
       </ul><!-- /.post-navi -->
 
     </article>

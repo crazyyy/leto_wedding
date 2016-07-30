@@ -28,14 +28,14 @@
     <div class="container">
       <div class="row">
 
-        <div class="header-social-container col-md-2">
+        <div class="header-social-container col-md-2 col-lg-2 col-sm-2 col-xs-2">
           <ul class="header-social">
             <li><a href="#"><i class="fa fa-vk" aria-hidden="true"></i></a></li>
             <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
           </ul><!-- /.header-social -->
         </div><!-- /.header-social-container -->
 
-        <div class="logo-container col-md-8">
+        <div class="logo-container col-md-8 col-lg-8 col-sm-8 col-xs-8">
           <div class="logo">
             <?php if ( is_front_page() && is_home() ){ } else { ?>
               <a href="<?php echo home_url(); ?>">

@@ -26,7 +26,7 @@ body {
   background-color: $base-background-color;
 
   -webkit-font-smoothing: antialiased;
-  &.page-template-front-page {
+  &.page-template-page-about {
     .nav__header {
       position: relative;
       &:after {
@@ -44,6 +44,11 @@ body {
 
         @extend .dblock;
       }
+    }
+  }
+  &.home {
+    .modal-welcome {
+      display: block;
     }
   }
 }
@@ -189,6 +194,14 @@ nav {
     @extend .clearfix;
     li {
       display: inline-block;
+      a {
+        text-decoration: none;
+      }
+      &:hover {
+        a {
+          text-decoration: none;
+        }
+      }
     }
   }
   &.nav__header {
@@ -276,6 +289,17 @@ article {
       }
     }
   }
+  &.post {
+    padding-bottom: 60px;
+
+    text-align: center;
+    img {
+      width: 100%;
+      margin-bottom: 80px;
+
+      border: 5px solid #fff;
+    }
+  }
   span {
     &.date {
       font-size: 24px;
@@ -305,6 +329,7 @@ article {
       border: 1px solid #000 !important;
       &.btn {
         font-size: 16px;
+        line-height: 1.8;
 
         width: 140px;
         margin: 0 auto;
@@ -312,6 +337,10 @@ article {
         padding-left: 0 !important;
 
         text-align: center !important;
+
+        border: 0 !important;
+        border-bottom: 2px solid #a867d0 !important;
+        border-radius: 0 !important;
       }
     }
     textarea {
@@ -427,6 +456,25 @@ article {
     text-align: center;
     h3 {
       font-size: 30px;
+      &:nth-child(2) {
+        position: relative;
+
+        margin-bottom: 20px;
+        padding-bottom: 30px;
+        &:after {
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+
+          width: 160px;
+          height: 1px;
+          margin-left: -80px;
+
+          background-color: #333;
+
+          @extend .dblock;
+        }
+      }
     }
     h4 {
       font-size: 36px;
@@ -508,11 +556,13 @@ article {
       }
       &:last-child {
         width: 30%;
+        padding-top: 0;
 
         text-align: center;
         span {
           font-size: 50px;
           font-weight: 200;
+          line-height: 1.3;
         }
       }
     }
@@ -745,6 +795,9 @@ article {
         margin-bottom: 20px;
 
         border: 5px solid #fff;
+        &:hover {
+          border-color: #ccc;
+        }
         img {
           width: 100%;
           min-height: 500px;
@@ -845,10 +898,12 @@ article {
   .price-container {
     font-size: 50px;
     font-weight: 200;
-color: #000;
+
     display: block;
 
     margin-bottom: 20px;
+
+    color: #000;
   }
 }
 footer {
@@ -879,9 +934,13 @@ footer {
   .footer-socail {
     ul {
       li {
-        display: inline-block;
+        font-size: 30px;
+        line-height: 1;
 
-        margin: 0 5px 0 0;
+        display: inline-block;
+        float: right;
+
+        margin: 0 5px;
         a {
           color: #000;
         }
@@ -907,7 +966,24 @@ footer {
     color: #000;
   }
 }
-
+@media (max-width: 800px) {
+  .logo-container .logo {
+    width: 100%;
+  }
+}
+@media (max-width: 700px) {
+  nav.nav__header ul {
+    padding-top: 10px;
+    li {
+      font-size: 16px !important;
+      line-height: 2;
+      a {
+        padding-left: 5px !important;
+        padding-right: 5px !important;
+      }
+    }
+  }
+}
 
 @import 'fonts/font_fontawesome';
 @import 'fonts/font_raleway';

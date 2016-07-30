@@ -119,7 +119,7 @@ $(document).ready(function() {
     localStorage.setItem('popState', 'shown')
   }
 
-  $('.modal-welcome .btn, .modal-welcome .choose-img, .modal .fa-times-circle').click(function(e) {
+  $('.modal .fa-times-circle').click(function(e) {
     $('.modal').fadeOut();
   });
 
