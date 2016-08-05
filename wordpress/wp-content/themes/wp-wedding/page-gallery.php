@@ -6,7 +6,49 @@
         <?php the_content(); ?>
       </div><!-- /.article-inside -->
 
-      <?php get_template_part('circle-carousel'); ?>
+
+      <?php if( have_rows('galery') ): ?>
+        <div id="wrapper">
+          <div id="inner">
+
+            <div id="carousel-wrapper">
+              <div id="carousel">
+
+                <?php while( have_rows('galery') ): the_row(); $image = get_sub_field('image'); ?>
+                  <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>" />
+                <?php endwhile; ?>
+                <?php while( have_rows('galery') ): the_row(); $image = get_sub_field('image'); ?>
+                  <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>" />
+                <?php endwhile; ?>
+                <?php while( have_rows('galery') ): the_row(); $image = get_sub_field('image'); ?>
+                  <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>" />
+                <?php endwhile; ?>
+
+              </div>
+              <a class="prev" id="foo2_prev" href="#"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+              <a class="next" id="foo2_next" href="#"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+            </div>
+
+
+            <div id="pager-wrapper">
+              <div id="pager">
+                <?php while( have_rows('galery') ): the_row(); $image = get_sub_field('image'); ?>
+                  <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>" />
+                <?php endwhile; ?>
+                <?php while( have_rows('galery') ): the_row(); $image = get_sub_field('image'); ?>
+                  <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>" />
+                <?php endwhile; ?>
+                <?php while( have_rows('galery') ): the_row(); $image = get_sub_field('image'); ?>
+                  <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>" />
+                <?php endwhile; ?>
+              </div>
+            </div>
+
+          </div><!-- inner -->
+        </div><!-- wrapper -->
+      <?php endif; ?>
+
+
 
       <div class="article-contacts">
         <h6><span>Свяжитесь с нами</span></h6>
