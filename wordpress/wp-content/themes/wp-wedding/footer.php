@@ -9,19 +9,17 @@
     <div class="row">
 
       <nav class="nav-footer col-md-6 col-lg-6 col-sm-6 col-xs-6 col-md-offset-3">
-        <ul class="footernav">
-          <li><a href="">Обо мне</a></li>
-          <li><a href="">Услуги</a></li>
-          <li><a href="">Блог</a></li>
-          <li><a href="">Контакты</a></li>
-        </ul><!-- /.footernav -->
+        <?php wpeFootNav(); ?>
       </nav><!-- /.nav-footer col-md-6 col-md-offset-5 -->
 
       <nav class="footer-socail col-md-2">
-        <ul>
-          <li><a href=""><i class="fa fa-vk" aria-hidden="true"></i></a></li>
-          <li><a href=""><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-        </ul><!-- /.footer-socail -->
+        <?php if(get_field('footer_social', 69)): ?>
+          <ul>
+            <?php while(has_sub_field('footer_social', 69)): ?>
+              <li><a href="<?php the_sub_field('link'); ?>"><?php the_sub_field('ico'); ?></a></li>
+            <?php endwhile; ?>
+          </ul>
+        <?php endif; ?>
       </nav><!-- /.footer-socail col-md-1 -->
 
       <p class="copyright col-md-12">

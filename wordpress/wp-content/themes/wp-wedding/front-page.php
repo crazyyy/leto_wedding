@@ -3,22 +3,25 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6 modal-choose">
-          <a href="#" class="choose-img">
-            <img src="<?php echo get_template_directory_uri(); ?>/img/modal-choose.jpg" alt="">
+          <a href="<?php the_field('main_link_left')?>" class="choose-img">
+            <?php $image = get_field('main_image_left'); if( !empty($image) ): ?><img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" /><?php endif; ?>
           </a>
-          <a href="#" class="btn btn-violet">СВАДЕБНЫЙ ОБРАЗ</a>
+          <a href="<?php the_field('main_link_left')?>" class="btn btn-violet"><?php the_field('main_text_left')?></a>
         </div><!-- /.col-md-6 modal-choose -->
         <div class="col-md-6 modal-choose">
-          <a href="<?php echo home_url(); ?>/floristika.htm" class="choose-img">
-            <img src="<?php echo get_template_directory_uri(); ?>/img/modal-choose-2.jpg" alt="">
+          <a href="<?php the_field('main_link_right')?>" class="choose-img">
+            <?php $image = get_field('main_image_right'); if( !empty($image) ): ?><img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" /><?php endif; ?>
           </a>
-          <a href="<?php echo home_url(); ?>/floristika.htm" class="btn btn-violet">ФЛОРИСТИКА</a>
+          <a href="<?php the_field('main_link_right')?>" class="btn btn-violet"><?php the_field('main_text_right')?></a>
         </div><!-- /.col-md-6 modal-choose -->
         <div class="col-md-12 modal-social">
-          <ul>
-            <li><a href=""><i class="fa fa-vk" aria-hidden="true"></i></a></li>
-            <li><a href=""><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-          </ul><!-- /.footer-socail -->
+          <?php if(get_field('header_social', 69)): ?>
+            <ul>
+              <?php while(has_sub_field('header_social', 69)): ?>
+                <li><a href="<?php the_sub_field('link'); ?>"><?php the_sub_field('ico'); ?></a></li>
+              <?php endwhile; ?>
+            </ul>
+          <?php endif; ?>
         </div><!-- /.col-md-12 modal-social -->
       </div><!-- /.row -->
     </div>

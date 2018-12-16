@@ -29,10 +29,13 @@
       <div class="row">
 
         <div class="header-social-container col-md-2 col-lg-2 col-sm-2 col-xs-2">
-          <ul class="header-social">
-            <li><a href="#"><i class="fa fa-vk" aria-hidden="true"></i></a></li>
-            <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-          </ul><!-- /.header-social -->
+          <?php if(get_field('header_social', 69)): ?>
+            <ul class="header-social">
+              <?php while(has_sub_field('header_social', 69)): ?>
+                <li><a href="<?php the_sub_field('link'); ?>"><?php the_sub_field('ico'); ?></a></li>
+              <?php endwhile; ?>
+            </ul>
+          <?php endif; ?>
         </div><!-- /.header-social-container -->
 
         <div class="logo-container col-md-8 col-lg-8 col-sm-8 col-xs-8">
